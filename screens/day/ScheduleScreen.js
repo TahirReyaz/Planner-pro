@@ -101,7 +101,7 @@ const ScheduleScreen = props => {
           onPress={() => setShowForm(prevState => !prevState)}
           icon={
             <Icon
-              name={showForm ? 'add' : 'add'}
+              name={showForm ? 'md-chevron-up' : 'md-chevron-down'}
               size={25}
               color="white"
               style={{marginLeft: 5, marginRight: -5}}

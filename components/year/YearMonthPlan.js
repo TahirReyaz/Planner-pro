@@ -15,7 +15,7 @@ const YearMonthPlan = props => {
   const dispatch = useDispatch();
 
   const [showDetails, setShowDetails] = useState(plans && planLength !== 0);
-  const showDetailsIcon = showDetails ? 'md-caret-up' : 'md-add-circle';
+  const showDetailsIcon = showDetails ? 'md-chevron-up' : 'md-add-circle';
 
   return (
     <View style={{...defaultStyles.styledContainer, marginBottom: 5}}>
@@ -95,11 +95,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Montserrat-Regular',
     marginRight: 5,
+    color: 'black',
   },
   text: {
     fontSize: 16,
     fontFamily: 'Montserrat-Regular',
     marginRight: 5,
+    color: 'black',
   },
 });
 

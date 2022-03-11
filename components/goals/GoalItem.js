@@ -26,7 +26,7 @@ const GoalItem = props => {
             onPress={props.onDel}
           />
           <Icon
-            name={showDetails ? 'md-caret-up' : 'md-caret-down'}
+            name={showDetails ? 'md-chevron-up' : 'md-chevron-down'}
             size={25}
             color="grey"
             style={{marginLeft: 10}}
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   titleNbuttons: {flexDirection: 'row', justifyContent: 'space-between'},
-  title: {fontSize: 20, fontFamily: 'Montserrat-Regular'},
+  title: {fontSize: 20, fontFamily: 'Montserrat-Regular', color: 'black'},
   buttonContainer: {
     flexDirection: 'row',
   },
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Montserrat-Regular',
     marginRight: 5,
+    color: 'black',
   },
   incDec: {
     flexDirection: 'row',

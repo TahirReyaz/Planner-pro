@@ -106,6 +106,8 @@ const NewGoalForm = props => {
       style={{
         marginTop: -8,
       }}
+      dropdownIconColor={Colors.lightGrey}
+      dropdownIconRippleColor={Colors.primary}
       onValueChange={colorChangeHandler}
       mode="dropdown">
       <Picker.Item
@@ -178,7 +180,7 @@ const NewGoalForm = props => {
             paddingVertical: 0,
             marginVertical: 0,
             height: 40,
-            width: 150,
+            width: '45%',
             marginTop: !formState.inputValidities.objName ? -20 : 15,
           }}>
           {colorPicker}

@@ -11,7 +11,7 @@ import PercentageBar from './PercentageBar';
 const PlannedGoalContainer = props => {
   const [showDetails, setShowDetails] = useState(false);
   const showDetailsIcon =
-    props.tasks && props.tasks.length > 0 ? 'md-caret-down' : 'md-add-circle';
+    props.tasks && props.tasks.length > 0 ? 'md-chevron-down' : 'md-add-circle';
 
   let completedTasksLength = 0;
   props.tasks.forEach(task => task.checked && completedTasksLength++);
@@ -40,7 +40,7 @@ const PlannedGoalContainer = props => {
           />
 
           <Icon
-            name={showDetails ? 'md-caret-up' : showDetailsIcon}
+            name={showDetails ? 'md-chevron-up' : showDetailsIcon}
             size={25}
             color="grey"
             style={{marginLeft: 10}}
@@ -90,11 +90,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Montserrat-Regular',
     marginRight: 5,
+    color: 'black',
   },
   text: {
     fontSize: 20,
     fontFamily: 'Montserrat-Regular',
     marginRight: 5,
+    color: 'black',
   },
   buttonContainer: {
     flexDirection: 'row',

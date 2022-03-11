@@ -41,6 +41,8 @@ const NewPlannedGoalForm = props => {
       style={{
         marginTop: -8,
       }}
+      dropdownIconColor={Colors.lightGrey}
+      dropdownIconRippleColor={Colors.primary}
       onValueChange={colorChangeHandler}
       mode="dropdown">
       <Picker.Item

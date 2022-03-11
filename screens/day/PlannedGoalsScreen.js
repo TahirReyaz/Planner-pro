@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   fallbackText: {
     fontSize: 25,
     fontFamily: 'Montserrat-Bold',
+    color: 'black',
   },
 });
 

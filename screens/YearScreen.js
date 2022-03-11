@@ -1,35 +1,37 @@
-import React from "react";
-import { View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
-import { Picker } from "@react-native-picker/picker";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import {View, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {Picker} from '@react-native-picker/picker';
+import {useSelector, useDispatch} from 'react-redux';
 
-import YearMonthPlan from "../components/year/YearMonthPlan";
-import * as yearActions from "../store/actions/yearActions";
-import defaultStyles from "../constants/default-styles";
-import years from "../constants/years";
-import { monthNames as months } from "../constants/months";
+import YearMonthPlan from '../components/year/YearMonthPlan';
+import * as yearActions from '../store/actions/yearActions';
+import defaultStyles from '../constants/default-styles';
+import years from '../constants/years';
+import {monthNames as months} from '../constants/months';
 
-const YearScreen = (props) => {
-  const selectedYear = useSelector((state) => state.yearPlan.selectedYear);
+const YearScreen = props => {
+  const selectedYear = useSelector(state => state.yearPlan.selectedYear);
   const dispatch = useDispatch();
-  const yearChangeHandler = (year) => {
+  const yearChangeHandler = year => {
     dispatch(yearActions.changeYear(year));
   };
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#FFFFFF'}}>
       <View style={defaultStyles.topMenu}>
         <Picker
           selectedValue={selectedYear}
-          style={{ width: 150 }}
+          style={{
+            width: 150,
+            color: 'black',
+          }}
           onValueChange={yearChangeHandler}
-          mode="dropdown"
-        >
-          {years.map((year) => (
+          mode="dropdown">
+          {years.map(year => (
             <Picker.Item label={year} value={year} key={year} />
           ))}
         </Picker>
       </View>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{flex: 1}}>
         <ScrollView contentContainerStyle={styles.monthsContainer}>
           <View style={styles.col}>
             {months.slice(0, 5).map((month, index) => (
@@ -59,17 +61,17 @@ const YearScreen = (props) => {
   );
 };
 
-export const screenOptions = (navData) => {
+export const screenOptions = navData => {
   return {
-    headerTitle: "Year Planner",
+    headerTitle: 'Year Planner',
   };
 };
 
 const styles = StyleSheet.create({
   monthsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     padding: 5,
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   },
   col: {
     flex: 0.49,

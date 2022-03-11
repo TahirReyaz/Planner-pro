@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   topText: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
+    color: 'black',
   },
 });
 

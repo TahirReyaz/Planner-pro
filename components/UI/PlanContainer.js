@@ -52,7 +52,7 @@ const PlanContainer = props => {
           )}
           {showDetails && (
             <Text style={{...styles.text, color: 'grey'}}>
-              {numOfPlans} tasks
+              {numOfPlans} task{numOfPlans === 1 ? '' : 's'}
             </Text>
           )}
           {props.plans && numOfPlans > 0 && (
@@ -64,7 +64,7 @@ const PlanContainer = props => {
             />
           )}
           <Icon
-            name={showDetails ? 'md-caret-up' : showDetailsIcon}
+            name={showDetails ? 'md-chevron-up' : showDetailsIcon}
             size={25}
             color="grey"
             style={{marginLeft: 10}}
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Montserrat-Regular',
     marginRight: 5,
+    color: 'black',
   },
   time: {
     fontSize: 14,

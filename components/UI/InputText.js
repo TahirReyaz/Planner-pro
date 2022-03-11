@@ -43,6 +43,7 @@ const InputText = props => {
           style={{
             fontFamily: 'Montserrat-Regular',
             fontSize: 20,
+            color: 'black',
             width: props.smallWidth ? '80%' : '90%',
           }}
           {...props}
