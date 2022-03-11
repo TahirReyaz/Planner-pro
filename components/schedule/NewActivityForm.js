@@ -8,7 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import moment from 'moment';
-// import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import {Picker} from '@react-native-picker/picker';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -86,31 +86,31 @@ const NewActivityForm = props => {
     [dispatchFormState],
   );
 
-  // const timeChangeHandler = useCallback(
-  //   (event, selectedTime) => {
-  //     let timeIsValid = true;
-  //     const currentTime = selectedTime || formState.inputValues.time;
-  //     setShow(Platform.OS === 'ios');
+  const timeChangeHandler = useCallback(
+    (event, selectedTime) => {
+      let timeIsValid = true;
+      const currentTime = selectedTime || formState.inputValues.time;
+      setShow(Platform.OS === 'ios');
 
-  //     const duplicateActivity = props.activities.find(
-  //       activity =>
-  //         moment(activity).format('HH:mm') ===
-  //         moment(currentTime).format('HH:mm'),
-  //     );
+      const duplicateActivity = props.activities.find(
+        activity =>
+          moment(activity).format('HH:mm') ===
+          moment(currentTime).format('HH:mm'),
+      );
 
-  //     if (duplicateActivity) {
-  //       timeIsValid = false;
-  //     }
+      if (duplicateActivity) {
+        timeIsValid = false;
+      }
 
-  //     dispatchFormState({
-  //       type: FORM_UPDATE,
-  //       value: currentTime,
-  //       isValid: timeIsValid,
-  //       input: 'time',
-  //     });
-  //   },
-  //   [dispatchFormState],
-  // );
+      dispatchFormState({
+        type: FORM_UPDATE,
+        value: currentTime,
+        isValid: timeIsValid,
+        input: 'time',
+      });
+    },
+    [dispatchFormState],
+  );
 
   const colorChangeHandler = useCallback(
     (value, index) => {
@@ -141,15 +141,15 @@ const NewActivityForm = props => {
     dispatchFormState({type: FORM_RESET});
   }, [formState, onAdd]);
 
-  // const timePicker = (
-  //   <DateTimePicker
-  //     value={formState.inputValues.time}
-  //     mode="time"
-  //     is24Hour={false}
-  //     display="default"
-  //     onChange={timeChangeHandler}
-  //   />
-  // );
+  const timePicker = (
+    <DateTimePicker
+      value={formState.inputValues.time}
+      mode="time"
+      is24Hour={false}
+      display="default"
+      onChange={timeChangeHandler}
+    />
+  );
 
   const colorPicker = (
     <Picker
@@ -192,7 +192,7 @@ const NewActivityForm = props => {
             <Text style={styles.timeError}>Already exists</Text>
           )}
         </View>
-        {/* {show && timePicker} */}
+        {show && timePicker}
         <View
           style={{
             ...defaultStyles.styledInput,

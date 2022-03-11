@@ -20,6 +20,8 @@ target 'planner_pro_rn' do
 
   pod 'react-native-notifications', :path => '../node_modules/react-native-notifications'
 
+  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
+
   target 'planner_pro_rnTests' do
     inherit! :complete
     # Pods for testing
