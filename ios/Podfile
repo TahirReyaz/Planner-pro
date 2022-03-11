@@ -18,6 +18,8 @@ target 'planner_pro_rn' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-notifications', :path => '../node_modules/react-native-notifications'
+
   target 'planner_pro_rnTests' do
     inherit! :complete
     # Pods for testing
