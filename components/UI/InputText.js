@@ -45,6 +45,7 @@ const InputText = props => {
             fontSize: 20,
             color: 'black',
             width: props.smallWidth ? '80%' : '90%',
+            paddingVertical: 0,
           }}
           {...props}
           value={value}

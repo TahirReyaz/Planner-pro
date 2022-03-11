@@ -82,6 +82,8 @@ const ScheduleScreen = props => {
         <Picker
           selectedValue={selectedDay}
           style={{width: 150, color: 'black'}}
+          dropdownIconColor={Colors.lightGrey}
+          dropdownIconRippleColor={Colors.primary}
           onValueChange={dayChangeHandler}
           mode="dropdown">
           <Picker.Item label="Everyday" value="Everyday" />
