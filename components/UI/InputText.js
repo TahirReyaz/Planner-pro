@@ -8,6 +8,7 @@ const InputText = props => {
   const value = props.value ? props.value : '';
   const {onInputChange, initiallyValid} = props;
   const [validity, setValidity] = useState(initiallyValid);
+  const [focused, setFocused] = useState(false);
 
   useEffect(() => {
     setValidity(initiallyValid);
@@ -36,9 +37,17 @@ const InputText = props => {
   };
 
   return (
-    <View style={{...styles.formControl, ...props.containerStyle}}>
+    <View style={[styles.formControl, props.containerStyle]}>
       {props.label && <Text style={styles.label}>{props.label}</Text>}
-      <View style={[props.inputStyle, styles.row]}>
+      <View
+        style={[
+          props.inputStyle,
+          styles.row,
+          {
+            borderBottomColor: focused ? Colors.primary : Colors.primaryLight,
+            borderLeftColor: focused ? Colors.primary : Colors.primaryLight,
+          },
+        ]}>
         <TextInput
           style={{
             fontFamily: 'Montserrat-Regular',
@@ -50,6 +59,8 @@ const InputText = props => {
           {...props}
           value={value}
           onChangeText={onTextChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
         />
         <Icon
           name="ios-close"
