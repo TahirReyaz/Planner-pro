@@ -26,16 +26,19 @@ const Activity = props => {
       fontFamily: 'Montserrat-Bold',
       marginRight: 5,
       marginTop: 5,
+      color: 'black',
     },
     text: {
       fontSize: 20,
       fontFamily: 'Montserrat-Regular',
+      color: 'black',
     },
     buttonContainer: {
       flexDirection: 'row',
     },
     fullTitle: {
       margin: 5,
+      color: 'black',
     },
   });
 
